@@ -2,6 +2,16 @@
 
 Share Site
 
+## Portfolio site structure
+
+The GitHub Pages portfolio is served directly from repository root static files:
+
+- `/index.html` — semantic, responsive portfolio page
+- `/assets/css/home.css` — page styling, color-scheme support, focus states, and reduced-motion behavior
+- `/python/` and `/docker/` — preserved note collections linked from the portfolio
+
+No build step, runtime JavaScript, or external runtime dependency is required for the root portfolio page.
+
 ## Copilot portfolio refresh
 
 The manually triggered `Refresh portfolio with Copilot` workflow reads the
