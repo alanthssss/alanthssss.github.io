@@ -6,19 +6,19 @@ Share Site / 分享站点
 
 The GitHub Pages portfolio is served directly from repository root static files:
 
-- `/index.html` — semantic, responsive portfolio page
-- `/assets/css/home.css` — page styling, color-scheme support, focus states, and reduced-motion behavior
+- `/index.html` — semantic, responsive bilingual (EN / ZH) portfolio page with resume-style project profiles and a keyboard-accessible language switcher
+- `/assets/css/home.css` — page styling, color-scheme support (light/dark), focus states, reduced-motion behavior, and language switcher styles
 - `/python/` and `/docker/` — preserved note collections linked from the portfolio
 
-No build step, runtime JavaScript, or external runtime dependency is required for the root portfolio page.
+No build step, runtime dependency on external CDNs, or secret is required. The page degrades gracefully without JavaScript (English is shown via `<noscript>`).
 
 GitHub Pages 作品集直接使用仓库根目录中的静态文件发布：
 
-- `/index.html` — 语义清晰、支持响应式布局的作品集页面
-- `/assets/css/home.css` — 页面样式、配色方案、焦点状态及减少动态效果支持
+- `/index.html` — 语义清晰、支持响应式布局的双语（英文 / 简体中文）作品集页面，包含简历式项目档案和键盘可访问的语言切换器
+- `/assets/css/home.css` — 页面样式、配色方案（亮色/暗色）、焦点状态、减少动态效果及语言切换器样式
 - `/python/` 和 `/docker/` — 从作品集链接进入的既有技术笔记
 
-根目录作品集页面不需要构建步骤、运行时 JavaScript 或外部运行依赖。
+根目录作品集页面不需要构建步骤、外部 CDN 运行依赖或密钥。页面在无 JavaScript 环境下优雅降级（通过 `<noscript>` 显示英文版本）。
 
 ## Copilot portfolio refresh / Copilot 作品集更新
 
