@@ -52,12 +52,20 @@ jobs:
                   nodes {
                     ... on Repository {
                       name
+                      nameWithOwner
                       description
                       url
                       homepageUrl
+                      createdAt
+                      updatedAt
+                      isArchived
                       stargazerCount
                       forkCount
+                      licenseInfo { name }
                       primaryLanguage { name color }
+                      languages(first: 8, orderBy: {field: SIZE, direction: DESC}) {
+                        nodes { name color }
+                      }
                       repositoryTopics(first: 10) { nodes { topic { name } } }
                     }
                   }
@@ -76,11 +84,30 @@ jobs:
         shell: bash
         run: |
           jq '.data.user.pinnedItems.nodes' pinned.json > pinned-projects.json
+
+          : > pinned-readmes.md
+          while IFS= read -r repository; do
+            {
+              printf '\n## %s README\n\n' "$repository"
+              if readme="$(gh api \
+                -H 'Accept: application/vnd.github.raw+json' \
+                "/repos/$OWNER/$repository/readme" 2>/dev/null)"; then
+                # Enough source material for an accurate profile without making
+                # the agent request unnecessarily large.
+                printf '%s\n' "${readme:0:12000}"
+              else
+                echo '_No README was available through the GitHub API._'
+              fi
+            } >> pinned-readmes.md
+          done < <(jq -r '.[].name' pinned-projects.json)
+
           {
             cat <<'PROMPT'
           Design and update the GitHub Pages portfolio in this repository for https://alanthssss.github.io/.
 
-          The portfolio must feature the owner's currently pinned GitHub projects. Treat the JSON below as the authoritative snapshot for this run:
+          The portfolio must feature the owner's currently pinned GitHub projects. Treat the JSON and README excerpts below as the authoritative source material for this run.
+
+          ### Repository metadata
 
           ```json
           PROMPT
@@ -88,15 +115,25 @@ jobs:
             cat <<'PROMPT'
           ```
 
+          ### Repository README excerpts
+
+          PROMPT
+            cat pinned-readmes.md
+            cat <<'PROMPT'
+
           Requirements:
           - Inspect the existing repository and preserve anything that is already useful.
           - Create a polished, distinctive, responsive static portfolio suitable for GitHub Pages.
-          - Make the pinned projects the primary content. Use only facts present in the JSON or repository content; do not invent metrics, roles, employers, testimonials, or project claims.
+          - Make the pinned projects the primary content. Present each one as a concise resume-style project experience, not as a raw GitHub snapshot or generic repository card.
+          - For every pinned project, create a clear project title and professional summary, then organize verified details into resume-like fields such as role/scope, problem or objective, key engineering work, technology stack, and measurable outcomes or evidence. Adapt or omit fields when the source material does not support them.
+          - Write outcome-oriented bullets with strong verbs, but use only facts present in the supplied JSON, README excerpts, or this repository. Never infer the owner's role, dates, team size, employers, users, performance gains, or metrics. If evidence is unavailable, omit the claim instead of adding placeholders or speculation.
+          - Make all portfolio navigation, headings, summaries, project profiles, labels, calls to action, accessibility text, and other visitor-facing copy available in both Simplified Chinese and English. Provide an obvious, keyboard-accessible language switcher; set the document language correctly when switching and remember the visitor's choice locally. The complete core experience must remain usable without JavaScript.
+          - Keep the Chinese and English versions equivalent in meaning and information hierarchy. Do not present machine-like literal translations or mix languages inside a sentence unless it is a proper noun or technical term.
           - Every project card must link to its repository. Use homepage links only when provided.
           - Provide excellent typography, spacing, keyboard navigation, focus states, semantic HTML, reduced-motion support, and strong mobile behavior.
           - Avoid external runtime dependencies and secrets. The deployed page must work as static files from the repository root.
           - Do not add analytics, tracking, contact forms, or fabricated personal details.
-          - Update README.md when setup or architecture changes.
+          - Keep portfolio-related documentation and workflow instructions in README.md available in both Simplified Chinese and English when setup or architecture changes.
           - Validate the result using the repository's available checks. Keep the pull request focused on the portfolio.
           PROMPT
             if [[ -n "$EXTRA_INSTRUCTIONS" ]]; then
@@ -140,4 +177,3 @@ jobs:
             echo
             echo "Copilot will open a pull request for review when the task is ready."
           } >> "$GITHUB_STEP_SUMMARY"
-
