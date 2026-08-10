@@ -4,149 +4,443 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0f172a">
-    <meta name="description" content="Pinned GitHub projects for alanthssss, presented as a responsive static portfolio.">
+    <meta name="description" content="alanthssss — pinned GitHub projects presented as a responsive bilingual portfolio.">
     <meta property="og:title" content="alanthssss · GitHub Portfolio">
-    <meta property="og:description" content="Current pinned repositories with project descriptions, topics, and links.">
+    <meta property="og:description" content="Pinned projects by alanthssss — AI research, tooling, and open-source work.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alanthssss.github.io/">
     <title>alanthssss · GitHub Portfolio</title>
     <link rel="stylesheet" href="/assets/css/home.css">
+    <noscript><style>.lang-zh { display: none !important; }</style></noscript>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+    <a class="skip-link" href="#main">
+      <span class="lang-en">Skip to main content</span>
+      <span class="lang-zh" aria-hidden="true">跳至主要内容</span>
+    </a>
 
     <header class="site-header" id="top">
       <div class="shell header-inner">
         <a class="brand" href="#top" aria-label="Back to top">alanthssss</a>
-        <nav aria-label="Primary" class="main-nav">
-          <a href="#projects">Projects</a>
-          <a href="#notes">Notes</a>
-          <a href="https://github.com/alanthssss">GitHub</a>
-        </nav>
+        <div class="header-right">
+          <nav aria-label="Primary navigation" class="main-nav">
+            <a href="#projects"><span class="lang-en">Projects</span><span class="lang-zh" aria-hidden="true">项目</span></a>
+            <a href="#notes"><span class="lang-en">Notes</span><span class="lang-zh" aria-hidden="true">笔记</span></a>
+            <a href="https://github.com/alanthssss" rel="noopener noreferrer">GitHub</a>
+          </nav>
+          <div class="lang-switcher" role="group" aria-label="Language / 语言">
+            <a href="?lang=en" id="lang-en-btn" class="lang-btn" aria-label="Switch to English" lang="en" hreflang="en">EN</a>
+            <a href="?lang=zh" id="lang-zh-btn" class="lang-btn" aria-label="切换至简体中文" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="main">
       <section class="hero shell" aria-labelledby="page-title">
-        <p class="eyebrow">GITHUB PAGES PORTFOLIO</p>
-        <h1 id="page-title">Pinned repositories</h1>
-        <p class="hero-text">This page highlights the current pinned-project snapshot for <a href="https://github.com/alanthssss">@alanthssss</a>. Repository links are always available, and project site links are included only when provided.</p>
+        <p class="eyebrow">
+          <span class="lang-en">GITHUB PAGES PORTFOLIO</span>
+          <span class="lang-zh" aria-hidden="true">GitHub Pages 作品集</span>
+        </p>
+        <h1 id="page-title">
+          <span class="lang-en">Pinned Projects</span>
+          <span class="lang-zh" aria-hidden="true">置顶项目</span>
+        </h1>
+        <p class="hero-text">
+          <span class="lang-en">Open-source work by <a href="https://github.com/alanthssss" rel="noopener noreferrer">@alanthssss</a> — AI research platforms, developer tooling, and collaborative resources.</span>
+          <span class="lang-zh" aria-hidden="true"><a href="https://github.com/alanthssss" rel="noopener noreferrer">@alanthssss</a> 的开源作品——涵盖 AI 研究平台、开发工具与协作资源。</span>
+        </p>
       </section>
 
       <section class="shell section" id="projects" aria-labelledby="projects-title">
         <div class="section-head">
-          <h2 id="projects-title">Featured projects</h2>
-          <p>6 repositories · factual snapshot</p>
+          <h2 id="projects-title">
+            <span class="lang-en">Featured Projects</span>
+            <span class="lang-zh" aria-hidden="true">精选项目</span>
+          </h2>
+          <p class="muted">
+            <span class="lang-en">6 pinned repositories</span>
+            <span class="lang-zh" aria-hidden="true">6 个置顶仓库</span>
+          </p>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card" aria-labelledby="project-sweetgold">
-            <h3 id="project-sweetgold">sweetgold</h3>
-            <p>Reproducible multi-agent AI lab with matched-seed arenas, honest robustness audits, CTDE and PPO.</p>
-            <dl class="stats" aria-label="Repository stats">
-              <div><dt>Language</dt><dd><span class="language-dot" style="--lang-color:#3572A5"></span>Python</dd></div>
-              <div><dt>Stars</dt><dd>0</dd></div>
-              <div><dt>Forks</dt><dd>0</dd></div>
+        <div class="project-list">
+
+          <!-- ── sweetgold ──────────────────────────────────────── -->
+          <article class="project-entry" aria-labelledby="proj-sweetgold">
+            <div class="entry-head">
+              <div class="entry-title-row">
+                <h3 id="proj-sweetgold" class="entry-name">sweetgold</h3>
+                <span class="lang-badge" style="--lang-color:#3572A5">
+                  <span class="lang-dot"></span>Python
+                </span>
+              </div>
+              <div class="entry-links">
+                <a href="https://github.com/alanthssss/sweetgold" rel="noopener noreferrer">
+                  <span class="lang-en">Repository</span><span class="lang-zh" aria-hidden="true">仓库</span>
+                </a>
+                <a href="https://alanthssss.github.io/sweetgold/" rel="noopener noreferrer">
+                  <span class="lang-en">Live Site</span><span class="lang-zh" aria-hidden="true">在线站点</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="entry-summary">
+              <span class="lang-en">A reproducible multi-agent AI research lab built around a deterministic bee-colony simulator. Combines a matched-seed benchmark, an interactive Strategy Arena, and an honest robustness audit pipeline — supporting behavior cloning, PPO, and centralized training with decentralized execution (CTDE) while keeping training, validation, and test seeds strictly isolated.</span>
+              <span class="lang-zh" aria-hidden="true">一个基于确定性蜂群模拟器的可复现多智能体 AI 研究平台。集成匹配种子基准、交互式策略竞技场和诚实鲁棒性审计流水线，支持行为克隆、PPO 及集中训练-分散执行（CTDE），并严格隔离训练、验证和测试种子。</span>
+            </p>
+
+            <dl class="entry-details">
+              <div class="detail-row">
+                <dt><span class="lang-en">Objective</span><span class="lang-zh" aria-hidden="true">目标</span></dt>
+                <dd>
+                  <span class="lang-en">Provide a self-contained, hardware-portable environment for comparing multi-agent RL policies under reproducible, seed-isolated conditions.</span>
+                  <span class="lang-zh" aria-hidden="true">提供自包含、硬件可移植的环境，用于在可复现、种子隔离条件下对比多智能体强化学习策略。</span>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Key Engineering</span><span class="lang-zh" aria-hidden="true">核心工程</span></dt>
+                <dd>
+                  <ul>
+                    <li><span class="lang-en">Implements behavior cloning, PPO, and CTDE training pipelines with explicit CPU / Apple MPS / NVIDIA CUDA device selection — no silent fallback.</span><span class="lang-zh" aria-hidden="true">实现行为克隆、PPO 及 CTDE 训练流水线，支持显式指定 CPU / Apple MPS / NVIDIA CUDA，杜绝静默回退。</span></li>
+                    <li><span class="lang-en">Run manifests record the hardware backend for every experiment, enabling honest cross-machine audit.</span><span class="lang-zh" aria-hidden="true">运行清单记录每次实验所使用的硬件后端，支持跨机器的诚实审计。</span></li>
+                    <li><span class="lang-en">M6 BC+PPO and M7 CTDE smoke workflows validated on Apple M1 Pro GPU.</span><span class="lang-zh" aria-hidden="true">M6 BC+PPO 与 M7 CTDE 冒烟工作流已在 Apple M1 Pro GPU 上验证通过。</span></li>
+                    <li><span class="lang-en">Matched-seed arena enforces identical environmental conditions across policy comparisons.</span><span class="lang-zh" aria-hidden="true">匹配种子竞技场确保策略对比时环境条件完全一致。</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Stack</span><span class="lang-zh" aria-hidden="true">技术栈</span></dt>
+                <dd><ul class="tag-list"><li>Python</li><li>PyTorch</li><li>PPO</li><li>CTDE</li><li>TypeScript</li><li>JavaScript</li><li>HTML</li></ul></dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">License</span><span class="lang-zh" aria-hidden="true">许可证</span></dt>
+                <dd>Apache 2.0</dd>
+              </div>
             </dl>
-            <ul class="topics" aria-label="Repository topics">
-              <li>behavior-cloning</li><li>ctde</li><li>multi-agent-reinforcement-learning</li><li>multi-agent-systems</li><li>ppo</li><li>python</li><li>pytorch</li><li>reinforcement-learning</li><li>reproducible-research</li><li>simulation</li>
+
+            <ul class="topics" aria-label="Topics">
+              <li>behavior-cloning</li><li>ctde</li><li>multi-agent-reinforcement-learning</li><li>ppo</li><li>pytorch</li><li>reproducible-research</li><li>simulation</li>
             </ul>
-            <p class="card-links"><a href="https://github.com/alanthssss/sweetgold">Repository</a> <a href="https://alanthssss.github.io/sweetgold/">Homepage</a></p>
           </article>
 
-          <article class="project-card" aria-labelledby="project-collaboration">
-            <h3 id="project-collaboration">collaboration</h3>
-            <p>An open-source bilingual playbook and copy-ready templates for turning discussions into decisions, owners, and action.</p>
-            <dl class="stats" aria-label="Repository stats">
-              <div><dt>Language</dt><dd>Not specified</dd></div>
-              <div><dt>Stars</dt><dd>0</dd></div>
-              <div><dt>Forks</dt><dd>0</dd></div>
+          <!-- ── collaboration ─────────────────────────────────── -->
+          <article class="project-entry" aria-labelledby="proj-collaboration">
+            <div class="entry-head">
+              <div class="entry-title-row">
+                <h3 id="proj-collaboration" class="entry-name">collaboration</h3>
+                <span class="lang-badge no-lang">
+                  <span class="lang-en">Docs</span><span class="lang-zh" aria-hidden="true">文档</span>
+                </span>
+              </div>
+              <div class="entry-links">
+                <a href="https://github.com/alanthssss/collaboration" rel="noopener noreferrer">
+                  <span class="lang-en">Repository</span><span class="lang-zh" aria-hidden="true">仓库</span>
+                </a>
+                <a href="https://alanthssss.github.io/collaboration/" rel="noopener noreferrer">
+                  <span class="lang-en">Live Guide</span><span class="lang-zh" aria-hidden="true">在线指南</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="entry-summary">
+              <span class="lang-en">An open-source bilingual playbook for software teams and open-source communities. Provides a one-page Collaboration Protocol, practical guides for discussions, meetings, feedback, and retrospectives, plus copy-ready Markdown templates — so every session ends with a decision, an owner, and a date.</span>
+              <span class="lang-zh" aria-hidden="true">面向软件团队和开源社区的开源双语协作手册。提供一页式协作约定、涵盖讨论、会议、反馈与复盘的实践方法，以及可直接复制的 Markdown 模板——让每次会话以决定、负责人和日期收尾。</span>
+            </p>
+
+            <dl class="entry-details">
+              <div class="detail-row">
+                <dt><span class="lang-en">Objective</span><span class="lang-zh" aria-hidden="true">目标</span></dt>
+                <dd>
+                  <span class="lang-en">Turn circling discussions into clear decisions and accountable owners by giving teams a minimal shared protocol and ready-to-use templates.</span>
+                  <span class="lang-zh" aria-hidden="true">通过提供最简共识约定和即用模板，将反复循环的讨论转化为明确决定与有担当的负责人。</span>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Key Engineering</span><span class="lang-zh" aria-hidden="true">核心工程</span></dt>
+                <dd>
+                  <ul>
+                    <li><span class="lang-en">Published as a live guide and downloadable PDF at alanthssss.github.io/collaboration/.</span><span class="lang-zh" aria-hidden="true">以在线指南和可下载 PDF 的形式发布于 alanthssss.github.io/collaboration/。</span></li>
+                    <li><span class="lang-en">Full bilingual (English / Simplified Chinese) coverage across all templates and guides.</span><span class="lang-zh" aria-hidden="true">所有模板与指南均提供完整的英文 / 简体中文双语版本。</span></li>
+                    <li><span class="lang-en">Situation-indexed template table lets teams jump directly to the relevant template (discussion, meeting, decision, retrospective).</span><span class="lang-zh" aria-hidden="true">按场景索引的模板表，帮助团队快速定位所需模板（讨论、会议、决策、复盘）。</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">License</span><span class="lang-zh" aria-hidden="true">许可证</span></dt>
+                <dd>CC BY 4.0</dd>
+              </div>
             </dl>
-            <ul class="topics" aria-label="Repository topics">
-              <li>bilingual</li><li>collaboration</li><li>decision-making</li><li>meeting-notes</li><li>open-source</li><li>playbook</li><li>productivity</li><li>retrospective</li><li>teamwork</li><li>templates</li>
+
+            <ul class="topics" aria-label="Topics">
+              <li>bilingual</li><li>collaboration</li><li>decision-making</li><li>playbook</li><li>templates</li><li>retrospective</li><li>teamwork</li>
             </ul>
-            <p class="card-links"><a href="https://github.com/alanthssss/collaboration">Repository</a> <a href="https://alanthssss.github.io/collaboration/">Homepage</a></p>
           </article>
 
-          <article class="project-card" aria-labelledby="project-mcata">
-            <h3 id="project-mcata">mcata</h3>
-            <p>A themeable merge roguelike puzzle game with Boosts, Hazard stages, and a full AI benchmark framework. Built with React, Vite, and TypeScript.</p>
-            <dl class="stats" aria-label="Repository stats">
-              <div><dt>Language</dt><dd><span class="language-dot" style="--lang-color:#3178c6"></span>TypeScript</dd></div>
-              <div><dt>Stars</dt><dd>0</dd></div>
-              <div><dt>Forks</dt><dd>0</dd></div>
+          <!-- ── mcata ─────────────────────────────────────────── -->
+          <article class="project-entry" aria-labelledby="proj-mcata">
+            <div class="entry-head">
+              <div class="entry-title-row">
+                <h3 id="proj-mcata" class="entry-name">mcata <span class="entry-subtitle">· Merge Boost</span></h3>
+                <span class="lang-badge" style="--lang-color:#3178c6">
+                  <span class="lang-dot"></span>TypeScript
+                </span>
+              </div>
+              <div class="entry-links">
+                <a href="https://github.com/alanthssss/mcata" rel="noopener noreferrer">
+                  <span class="lang-en">Repository</span><span class="lang-zh" aria-hidden="true">仓库</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="entry-summary">
+              <span class="lang-en">A themeable merge roguelike puzzle game — and a full AI benchmark framework — built with React, Vite, and TypeScript. Players merge tiles on a 4×4 grid across escalating stages, collecting Boosts and navigating Hazards, while the underlying numeric engine serves as a reproducible benchmark target for AI agents.</span>
+              <span class="lang-zh" aria-hidden="true">一款可换肤的合并 Roguelike 益智游戏，同时内置完整 AI 基准框架，基于 React、Vite 和 TypeScript 构建。玩家在 4×4 网格上合并方块，经历逐渐升级的关卡、收集 Boost 并应对 Hazard；底层数值引擎作为可复现的 AI 基准目标。</span>
+            </p>
+
+            <dl class="entry-details">
+              <div class="detail-row">
+                <dt><span class="lang-en">Key Engineering</span><span class="lang-zh" aria-hidden="true">核心工程</span></dt>
+                <dd>
+                  <ul>
+                    <li><span class="lang-en">Pluggable theme system drives tile visuals independently of the numeric merge engine, enabling cosmetic changes without breaking benchmark compatibility.</span><span class="lang-zh" aria-hidden="true">可插拔主题系统独立于数值合并引擎驱动方块视觉，支持外观变更而不影响基准兼容性。</span></li>
+                    <li><span class="lang-en">Run-level Rule modifiers (chosen before each run) vary corner bonuses, spawn frequencies, output scaling, and step budgets.</span><span class="lang-zh" aria-hidden="true">每局开始前可选的规则修改器，调整角落奖励、生成频率、产出缩放和步数预算。</span></li>
+                    <li><span class="lang-en">Six Style archetypes with in-run upgrade paths enable deep build diversity.</span><span class="lang-zh" aria-hidden="true">六种流派各有局内升级路径，支持丰富的构建多样性。</span></li>
+                    <li><span class="lang-en">Hazard stages (Entropy Tax, Collapse Field) stress-test both player and AI strategies.</span><span class="lang-zh" aria-hidden="true">Hazard 关卡（熵税、崩溃场）对玩家和 AI 策略均构成压力测试。</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Stack</span><span class="lang-zh" aria-hidden="true">技术栈</span></dt>
+                <dd><ul class="tag-list"><li>TypeScript</li><li>React</li><li>Vite</li><li>CSS</li></ul></dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">License</span><span class="lang-zh" aria-hidden="true">许可证</span></dt>
+                <dd>GPL-3.0</dd>
+              </div>
             </dl>
-            <ul class="topics" aria-label="Repository topics">
+
+            <ul class="topics" aria-label="Topics">
               <li>benchmark</li><li>game</li><li>reactjs</li><li>roguelike-game</li>
             </ul>
-            <p class="card-links"><a href="https://github.com/alanthssss/mcata">Repository</a></p>
           </article>
 
-          <article class="project-card" aria-labelledby="project-pw2048">
-            <h3 id="project-pw2048">pw2048</h3>
-            <p>An automation-first 2048 benchmark and experimentation platform for comparing search and reinforcement learning algorithms with reproducible evaluation, reporting, and developer-friendly workflows.</p>
-            <dl class="stats" aria-label="Repository stats">
-              <div><dt>Language</dt><dd><span class="language-dot" style="--lang-color:#3572A5"></span>Python</dd></div>
-              <div><dt>Stars</dt><dd>0</dd></div>
-              <div><dt>Forks</dt><dd>0</dd></div>
+          <!-- ── pw2048 ─────────────────────────────────────────── -->
+          <article class="project-entry" aria-labelledby="proj-pw2048">
+            <div class="entry-head">
+              <div class="entry-title-row">
+                <h3 id="proj-pw2048" class="entry-name">pw2048</h3>
+                <span class="lang-badge" style="--lang-color:#3572A5">
+                  <span class="lang-dot"></span>Python
+                </span>
+              </div>
+              <div class="entry-links">
+                <a href="https://github.com/alanthssss/pw2048" rel="noopener noreferrer">
+                  <span class="lang-en">Repository</span><span class="lang-zh" aria-hidden="true">仓库</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="entry-summary">
+              <span class="lang-en">An automation-first benchmark and experimentation platform that uses the 2048 game as a compact, deterministic environment for comparing search and reinforcement learning algorithms. Designed as a small engineering system covering the full model lifecycle — training, evaluation, registry, quality gates, deployment, observability, and rollback.</span>
+              <span class="lang-zh" aria-hidden="true">以 2048 游戏为紧凑确定性环境，用于对比搜索算法与强化学习算法的自动化优先基准与实验平台。系统覆盖完整模型生命周期：训练、评估、注册、质量门控、部署、可观测性与回滚。</span>
+            </p>
+
+            <dl class="entry-details">
+              <div class="detail-row">
+                <dt><span class="lang-en">Objective</span><span class="lang-zh" aria-hidden="true">目标</span></dt>
+                <dd>
+                  <span class="lang-en">Demonstrate that AI experiments can be compared, reproduced, released, and operated safely — connecting Env → Train → Eval → Registry → Quality Gate → Deploy → Observe → Rollback in a single coherent system.</span>
+                  <span class="lang-zh" aria-hidden="true">证明 AI 实验可安全比较、复现、发布与运维——将 Env → Train → Eval → Registry → Quality Gate → Deploy → Observe → Rollback 串联为单一连贯系统。</span>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Key Engineering</span><span class="lang-zh" aria-hidden="true">核心工程</span></dt>
+                <dd>
+                  <ul>
+                    <li><span class="lang-en">Models carry immutable manifests; candidates must pass offline quality checks before promotion.</span><span class="lang-zh" aria-hidden="true">模型附带不可变清单；候选模型须通过离线质量检查后方可晋升。</span></li>
+                    <li><span class="lang-en">Stable/Canary workloads expose metrics and traces, run in isolated Kubernetes environments, and support automated rollback.</span><span class="lang-zh" aria-hidden="true">Stable / Canary 工作负载暴露指标与追踪数据，运行于隔离的 Kubernetes 环境，支持自动回滚。</span></li>
+                    <li><span class="lang-en">Multi-interface developer experience: CLI, TUI, and Web frontends.</span><span class="lang-zh" aria-hidden="true">多界面开发体验：CLI、TUI 和 Web 前端。</span></li>
+                    <li><span class="lang-en">Dockerized, with Shell-scripted automation covering the full benchmark workflow.</span><span class="lang-zh" aria-hidden="true">已 Docker 化，Shell 脚本自动化覆盖完整基准工作流。</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Stack</span><span class="lang-zh" aria-hidden="true">技术栈</span></dt>
+                <dd><ul class="tag-list"><li>Python</li><li>Playwright</li><li>Docker</li><li>Kubernetes</li><li>Shell</li><li>HTML</li><li>JavaScript</li></ul></dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">License</span><span class="lang-zh" aria-hidden="true">许可证</span></dt>
+                <dd>GPL-3.0</dd>
+              </div>
             </dl>
-            <ul class="topics" aria-label="Repository topics">
-              <li>algorithms</li><li>benchmark</li><li>playwright</li><li>python</li><li>performance</li><li>reinforcement-learning</li>
+
+            <ul class="topics" aria-label="Topics">
+              <li>algorithms</li><li>benchmark</li><li>playwright</li><li>reinforcement-learning</li><li>performance</li>
             </ul>
-            <p class="card-links"><a href="https://github.com/alanthssss/pw2048">Repository</a></p>
           </article>
 
-          <article class="project-card" aria-labelledby="project-petal">
-            <h3 id="project-petal">petal</h3>
-            <p>setup-friendly ansible-like lightweight distributed infra ops</p>
-            <dl class="stats" aria-label="Repository stats">
-              <div><dt>Language</dt><dd><span class="language-dot" style="--lang-color:#00ADD8"></span>Go</dd></div>
-              <div><dt>Stars</dt><dd>1</dd></div>
-              <div><dt>Forks</dt><dd>0</dd></div>
+          <!-- ── petal ─────────────────────────────────────────── -->
+          <article class="project-entry" aria-labelledby="proj-petal">
+            <div class="entry-head">
+              <div class="entry-title-row">
+                <h3 id="proj-petal" class="entry-name">petal</h3>
+                <span class="lang-badge" style="--lang-color:#00ADD8">
+                  <span class="lang-dot"></span>Go
+                </span>
+              </div>
+              <div class="entry-links">
+                <a href="https://github.com/keyscome/petal" rel="noopener noreferrer">
+                  <span class="lang-en">Repository</span><span class="lang-zh" aria-hidden="true">仓库</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="entry-summary">
+              <span class="lang-en">A setup-friendly, Ansible-inspired lightweight distributed infrastructure operations tool. Designed for ease of adoption with a single binary distribution and minimal configuration overhead.</span>
+              <span class="lang-zh" aria-hidden="true">一款易于上手、受 Ansible 启发的轻量分布式基础设施运维工具。以单一二进制分发，配置开销极小，降低采用门槛。</span>
+            </p>
+
+            <dl class="entry-details">
+              <div class="detail-row">
+                <dt><span class="lang-en">Key Engineering</span><span class="lang-zh" aria-hidden="true">核心工程</span></dt>
+                <dd>
+                  <ul>
+                    <li><span class="lang-en">Ships as a single binary, removing runtime dependencies for distributed ops tasks.</span><span class="lang-zh" aria-hidden="true">以单一二进制交付，消除分布式运维任务的运行时依赖。</span></li>
+                    <li><span class="lang-en">Dockerfile and Makefile included for reproducible builds and container deployment.</span><span class="lang-zh" aria-hidden="true">包含 Dockerfile 和 Makefile，支持可复现构建与容器部署。</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Stack</span><span class="lang-zh" aria-hidden="true">技术栈</span></dt>
+                <dd><ul class="tag-list"><li>Go</li><li>Shell</li><li>Docker</li><li>Makefile</li></ul></dd>
+              </div>
             </dl>
-            <ul class="topics" aria-label="Repository topics">
-              <li>ansible-like</li><li>binary</li><li>distributed</li><li>golang</li><li>infra</li><li>lightweight</li><li>ops</li><li>setup-friendly</li>
+
+            <ul class="topics" aria-label="Topics">
+              <li>ansible-like</li><li>distributed</li><li>golang</li><li>infra</li><li>lightweight</li><li>ops</li>
             </ul>
-            <p class="card-links"><a href="https://github.com/keyscome/petal">Repository</a></p>
           </article>
 
-          <article class="project-card" aria-labelledby="project-pulse">
-            <h3 id="project-pulse">pulse</h3>
-            <p>A lightweight, cross-platform CLI tool for monitoring network service connectivity</p>
-            <dl class="stats" aria-label="Repository stats">
-              <div><dt>Language</dt><dd><span class="language-dot" style="--lang-color:#00ADD8"></span>Go</dd></div>
-              <div><dt>Stars</dt><dd>0</dd></div>
-              <div><dt>Forks</dt><dd>0</dd></div>
+          <!-- ── pulse ─────────────────────────────────────────── -->
+          <article class="project-entry" aria-labelledby="proj-pulse">
+            <div class="entry-head">
+              <div class="entry-title-row">
+                <h3 id="proj-pulse" class="entry-name">pulse</h3>
+                <span class="lang-badge" style="--lang-color:#00ADD8">
+                  <span class="lang-dot"></span>Go
+                </span>
+              </div>
+              <div class="entry-links">
+                <a href="https://github.com/keyscome/pulse" rel="noopener noreferrer">
+                  <span class="lang-en">Repository</span><span class="lang-zh" aria-hidden="true">仓库</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="entry-summary">
+              <span class="lang-en">A lightweight, cross-platform CLI tool for monitoring network service connectivity. Provides infrastructure and middleware health-check capabilities from the command line.</span>
+              <span class="lang-zh" aria-hidden="true">一款轻量跨平台 CLI 工具，用于监控网络服务连通性，提供基础设施和中间件健康检查能力。</span>
+            </p>
+
+            <dl class="entry-details">
+              <div class="detail-row">
+                <dt><span class="lang-en">Key Engineering</span><span class="lang-zh" aria-hidden="true">核心工程</span></dt>
+                <dd>
+                  <ul>
+                    <li><span class="lang-en">Cross-platform: runs on Linux, macOS, and Windows via Batchfile scripting.</span><span class="lang-zh" aria-hidden="true">跨平台：通过 Batchfile 脚本支持 Linux、macOS 和 Windows。</span></li>
+                    <li><span class="lang-en">Go Template-driven output for flexible, scriptable reporting.</span><span class="lang-zh" aria-hidden="true">Go Template 驱动输出，支持灵活的脚本化报告。</span></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="detail-row">
+                <dt><span class="lang-en">Stack</span><span class="lang-zh" aria-hidden="true">技术栈</span></dt>
+                <dd><ul class="tag-list"><li>Go</li><li>Shell</li><li>Go Template</li></ul></dd>
+              </div>
             </dl>
-            <ul class="topics" aria-label="Repository topics">
+
+            <ul class="topics" aria-label="Topics">
               <li>infrastructure</li><li>middleware</li><li>network</li><li>cli</li>
             </ul>
-            <p class="card-links"><a href="https://github.com/keyscome/pulse">Repository</a></p>
           </article>
+
         </div>
       </section>
 
       <section class="shell section notes" id="notes" aria-labelledby="notes-title">
         <div class="section-head">
-          <h2 id="notes-title">Earlier notes in this repository</h2>
-          <p>Preserved from existing content</p>
+          <h2 id="notes-title">
+            <span class="lang-en">Notes</span>
+            <span class="lang-zh" aria-hidden="true">技术笔记</span>
+          </h2>
+          <p class="muted">
+            <span class="lang-en">Preserved reference material</span>
+            <span class="lang-zh" aria-hidden="true">既有参考资料</span>
+          </p>
         </div>
         <div class="notes-grid">
           <a href="/python/">
-            <h3>Python notes</h3>
-            <p>Language basics, execution modes, and virtual environment notes.</p>
+            <h3><span class="lang-en">Python Notes</span><span class="lang-zh" aria-hidden="true">Python 笔记</span></h3>
+            <p><span class="lang-en">Language basics, execution modes, and virtual environment notes.</span><span class="lang-zh" aria-hidden="true">语言基础、执行模式与虚拟环境笔记。</span></p>
           </a>
           <a href="/docker/SUMMARY.html">
-            <h3>Docker notes</h3>
-            <p>Containers, images, Compose, and networking walkthroughs.</p>
+            <h3><span class="lang-en">Docker Notes</span><span class="lang-zh" aria-hidden="true">Docker 笔记</span></h3>
+            <p><span class="lang-en">Containers, images, Compose, and networking walkthroughs.</span><span class="lang-zh" aria-hidden="true">容器、镜像、Compose 及网络配置演练。</span></p>
           </a>
         </div>
       </section>
     </main>
 
     <footer class="shell site-footer">
-      <p>Static portfolio from repository root for GitHub Pages.</p>
-      <p><a href="https://github.com/alanthssss">github.com/alanthssss</a></p>
+      <p>
+        <span class="lang-en">Static portfolio — served from repository root for GitHub Pages.</span>
+        <span class="lang-zh" aria-hidden="true">静态作品集——直接从仓库根目录发布至 GitHub Pages。</span>
+      </p>
+      <p><a href="https://github.com/alanthssss" rel="noopener noreferrer">github.com/alanthssss</a></p>
     </footer>
+
+    <script>
+      (function () {
+        var stored = localStorage.getItem('lang');
+        var param = new URLSearchParams(location.search).get('lang');
+        var lang = (param === 'zh' || param === 'en') ? param : (stored || 'en');
+        if (param && param !== stored) localStorage.setItem('lang', lang);
+
+        function applyLang(l) {
+          document.documentElement.lang = l === 'zh' ? 'zh-Hans' : 'en';
+          var enEls = document.querySelectorAll('.lang-en');
+          var zhEls = document.querySelectorAll('.lang-zh');
+          for (var i = 0; i < enEls.length; i++) {
+            enEls[i].hidden = (l === 'zh');
+            enEls[i].removeAttribute('aria-hidden');
+            if (l === 'zh') enEls[i].setAttribute('aria-hidden', 'true');
+          }
+          for (var j = 0; j < zhEls.length; j++) {
+            zhEls[j].hidden = (l === 'en');
+            zhEls[j].removeAttribute('aria-hidden');
+            if (l === 'en') zhEls[j].setAttribute('aria-hidden', 'true');
+          }
+          var enBtn = document.getElementById('lang-en-btn');
+          var zhBtn = document.getElementById('lang-zh-btn');
+          if (enBtn) enBtn.setAttribute('aria-current', l === 'en' ? 'true' : 'false');
+          if (zhBtn) zhBtn.setAttribute('aria-current', l === 'zh' ? 'true' : 'false');
+        }
+
+        applyLang(lang);
+
+        function switchLang(l) {
+          localStorage.setItem('lang', l);
+          applyLang(l);
+          var url = new URL(location.href);
+          url.searchParams.set('lang', l);
+          history.replaceState(null, '', url.toString());
+        }
+
+        var enBtn = document.getElementById('lang-en-btn');
+        var zhBtn = document.getElementById('lang-zh-btn');
+        if (enBtn) enBtn.addEventListener('click', function (e) { e.preventDefault(); switchLang('en'); });
+        if (zhBtn) zhBtn.addEventListener('click', function (e) { e.preventDefault(); switchLang('zh'); });
+      })();
+    </script>
   </body>
 </html>
