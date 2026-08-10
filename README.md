@@ -58,11 +58,15 @@ Copilot selects one automatically.
 The workflow fetches up to six pinned repositories from `alanthssss`, starts a
 Copilot agent task, and requests a pull request. Review and merge that pull
 request to publish the update through the existing GitHub Pages workflow.
+Repository metadata is compacted and README excerpts are bounded so the task
+stays within the Copilot agent API prompt limit.
 
 打开 **Actions → Refresh portfolio with Copilot → Run workflow**。可以选择填写额外的
 设计要求和受支持的模型 ID；留空时由 Copilot 自动选择模型。Workflow 会读取
 `alanthssss` 最多六个置顶仓库的元数据及 README 摘要，启动 Copilot agent task，
 并要求它创建 pull request。审核并合并该 PR 后，现有 GitHub Pages workflow 会发布更新。
+仓库元数据会进行压缩，README 摘要也会限制长度，确保任务不超过 Copilot agent API 的
+提示长度上限。
 
 生成的作品集必须提供含义一致的简体中文和英文版本，并将每个置顶项目呈现为基于可验证
 资料的简历式项目经历，而不是简单的 GitHub 数据快照。
