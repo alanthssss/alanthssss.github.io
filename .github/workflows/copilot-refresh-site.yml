@@ -83,7 +83,9 @@ jobs:
       - name: Build the Copilot task
         shell: bash
         run: |
-          jq '.data.user.pinnedItems.nodes' pinned.json > pinned-projects.json
+          # Compact metadata and bounded README excerpts keep the complete agent
+          # problem statement below the API's 30,000-character limit.
+          jq -c '.data.user.pinnedItems.nodes' pinned.json > pinned-projects.json
 
           : > pinned-readmes.md
           while IFS= read -r repository; do
@@ -92,9 +94,7 @@ jobs:
               if readme="$(gh api \
                 -H 'Accept: application/vnd.github.raw+json' \
                 "/repos/$OWNER/$repository/readme" 2>/dev/null)"; then
-                # Enough source material for an accurate profile without making
-                # the agent request unnecessarily large.
-                printf '%s\n' "${readme:0:12000}"
+                printf '%s\n' "${readme:0:2200}"
               else
                 echo '_No README was available through the GitHub API._'
               fi
@@ -140,6 +140,13 @@ jobs:
               printf '\nAdditional instructions from the workflow operator:\n%s\n' "$EXTRA_INSTRUCTIONS"
             fi
           } > copilot-prompt.md
+
+          prompt_characters="$(wc -m < copilot-prompt.md | tr -d ' ')"
+          if (( prompt_characters > 29500 )); then
+            echo "::error::Generated Copilot prompt is $prompt_characters characters; the safe maximum is 29500. Shorten the additional instructions."
+            exit 1
+          fi
+          echo "Copilot prompt size: $prompt_characters characters"
 
       - name: Start Copilot coding agent
         id: copilot
