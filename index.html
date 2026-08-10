@@ -428,16 +428,18 @@
 
         applyLang(lang);
 
-        document.getElementById('lang-en-btn').addEventListener('click', function (e) {
-          e.preventDefault();
-          localStorage.setItem('lang', 'en');
-          applyLang('en');
-        });
-        document.getElementById('lang-zh-btn').addEventListener('click', function (e) {
-          e.preventDefault();
-          localStorage.setItem('lang', 'zh');
-          applyLang('zh');
-        });
+        function switchLang(l) {
+          localStorage.setItem('lang', l);
+          applyLang(l);
+          var url = new URL(location.href);
+          url.searchParams.set('lang', l);
+          history.replaceState(null, '', url.toString());
+        }
+
+        var enBtn = document.getElementById('lang-en-btn');
+        var zhBtn = document.getElementById('lang-zh-btn');
+        if (enBtn) enBtn.addEventListener('click', function (e) { e.preventDefault(); switchLang('en'); });
+        if (zhBtn) zhBtn.addEventListener('click', function (e) { e.preventDefault(); switchLang('zh'); });
       })();
     </script>
   </body>
